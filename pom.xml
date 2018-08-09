@@ -8,7 +8,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.7.RELEASE</version>
+    <version>1.5.10.RELEASE</version>
   </parent>
 
   <groupId>izhbg.cloud</groupId>
@@ -19,7 +19,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>1.8</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <modules>
@@ -27,22 +28,17 @@
     <module>izhbg-demo-service</module>
     <module>izhbg-demo-service-impl</module>
     <module>izhbg-demo-web</module>
+    <module>izhbg-common-support</module>
+    <module>izhbg-config-center</module>
   </modules>
 
   <!-- 使用spring cloud必须引入 -->
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>1.5.7.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Dalston.SR3</version>
+        <version>Edgware.SR2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -71,17 +67,6 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.37</version>
     </dependency>
-
   </dependencies>
-
-  <build>
-    <finalName>${project.artifactId}</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 
 </project>

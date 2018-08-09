@@ -1,21 +1,22 @@
-package izhbg.cloud;
+package izhbg.cloud.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.ConfigServerApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Hello world!
  *
  */
 @SpringBootApplication
+@EnableConfigServer
 @EnableEurekaClient
-@ComponentScan("izhbg.cloud.demo")
-public class ServiceApplication
+public class ConfigCenterApplication
 {
     public static void main( String[] args )
     {
-        SpringApplication.run( ServiceApplication.class, args );
+        SpringApplication.run(ConfigServerApplication.class,args);
     }
 }
